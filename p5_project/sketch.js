@@ -16,14 +16,6 @@ let imgDrwPrps = {aspect: 0, width: 0, height: 0, xOffset: 0, yOffset: 0};
 //a variable for the canvas aspect ratio
 let canvasAspectRatio = 0;
 
-let nearestRow;
-
-let colors = ["#4669BE", "#AA3C2D", "#EBD228", "#D7D7D2", "#F0F0EB"]
-
-let initialMouseY;
-let finalMouseY;
-let isDragging = false;
-
 //preload the image
 function preload() {
   img = loadImage('/assets/Piet_Mondrian Broadway_Boogie_Woogie.jpeg');
@@ -32,7 +24,7 @@ function preload() {
 function setup() {
   //make the canvas the same size as the image using its properties
   createCanvas(windowWidth, windowHeight);
-  //calculate the aspect ratio of the image - this will never change so we only need to do it once
+  //calculate the aspect ratio of the image- this will never change so we only need to do it once
   imgDrwPrps.aspect = img.width / img.height;
   
   //calculate the draw properties of the image using the function made
@@ -107,15 +99,6 @@ function draw() {
     // if show original image
     image(img, imgDrwPrps.xOffset, imgDrwPrps.yOffset, imgDrwPrps.width, imgDrwPrps.height);
   }
-  if (drawSegments) {
-    //let nearestColumn = Math.round((mouseX - imgDrwPrps.xOffset) / (imgDrwPrps.width / numSegments));
-    let nearestRow = Math.round((mouseY - imgDrwPrps.yOffset) / (imgDrwPrps.height / numSegments));
-    
-    stroke(0);
-    strokeWeight(2);
-      let y = nearestRow * (imgDrwPrps.height / numSegments) + imgDrwPrps.yOffset;
-      line(imgDrwPrps.xOffset, y, imgDrwPrps.xOffset + imgDrwPrps.width, y);
-}
 }
 
 function keyPressed() {
@@ -205,31 +188,5 @@ class ImageSegment {
     noStroke();
     fill(this.srcImgSegColour);
     rect(finalXPos, finalYPos, this.drawWidth, this.drawHeight);
-  }
-  changeColor(newColor) {
-    this.srcImgSegColour = newColor;
-  }
-  
-}
-
-//record the initial position when the mouse is clicked and change isDragging to true
-function mousePressed() {
-  initialMouseY = mouseY;
-  isDragging = true;
-}
-
-//record the final position when the mouse is released and change isDragging to false
-function mouseReleased() {
-  isDragging = false;
-  finalMouseY = mouseY;
-
-  let yMin = min(initialMouseY, finalMouseY);
-  let yMax = max(initialMouseY, finalMouseY);
-
-  //change the selected segment's color
-  for (const segment of segments) {
-    if (segment.drawYPos + segment.drawWidth > yMin && segment.drawYPos < yMax){
-      segment.changeColor(random(colors));
-    }
   }
 }
