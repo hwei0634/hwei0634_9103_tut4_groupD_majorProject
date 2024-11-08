@@ -1,8 +1,11 @@
 # hwei0634_9103_tut4_groupD_majorProject
 ## Instructions on how to interact with the work
-**key press** Pressing the spacebar switches the canvas screen between "images" and "segments".
-**mouse move** When the mouse moves across the canvas, a solid black line is displayed indicating the "column" position of the mouse.
-**mouse drag** When the user clicks and drags the mouse, the columns that the mouse drag moves through will be selected, and when the mouse is released, the colors of the segments in these columns will be randomly changed again. The randomly assigned colors come from the "colors" we set.
+**key press** 
+Pressing the spacebar switches the canvas screen between "images" and "segments".
+**mouse move** 
+When the mouse moves across the canvas, a solid black line is displayed indicating the "column" position of the mouse.
+**mouse drag** 
+When the user clicks and drags the mouse, the columns that the mouse drag moves through will be selected, and when the mouse is released, the colors of the segments in these columns will be randomly changed again. The randomly assigned colors come from the "colors" we set.
 ## Details of my individual approach to animating the group code
 **interaction** 
 I choose interaction to drive my individual code. We animated the position of segments. I use mousePressed(), mouseReleased(), changeColor(newColor) and variable, "isDigging", to achieve the effect: drag the mouse to select a area and change the segment's color within the area.
