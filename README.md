@@ -4,6 +4,10 @@
 
 Pressing the spacebar switches the canvas screen between "images" and "segments".
 
+![image](readmeImages/image.png) ![segment](readmeImages/segments1.png)
+
+Pressing the Enter key clears the colour change effect and all segments return to their original state.
+
 **mouse move** 
 
 When the mouse moves across the canvas, a solid black line is displayed indicating the "column" position of the mouse.
@@ -11,6 +15,8 @@ When the mouse moves across the canvas, a solid black line is displayed indicati
 **mouse drag** 
 
 When the user clicks and drags the mouse, the columns that the mouse drag moves through will be selected, and when the mouse is released, the colors of the segments in these columns will be randomly changed again. The randomly assigned colors come from the "colors" we set.
+
+![change segments colors](readmeImages/segments-colorChanged.png) ![all segments changed](readmeImages/segments-allColorChanged.png)
 
 ## Details of my individual approach to animating the group code
 
@@ -62,3 +68,5 @@ I choose interaction to drive my individual code. We animated the position of se
 //Change the color of the selected segment.
 
 ![P1](readmeImages/p1.png)
+
+
