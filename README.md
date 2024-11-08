@@ -1,5 +1,8 @@
 # hwei0634_9103_tut4_groupD_majorProject
 ## Instructions on how to interact with the work
+
+![interaction](readmeImages/interaction-demonstration.gif)
+
 **key press** 
 
 Pressing the spacebar switches the canvas screen between "images" and "segments".
@@ -70,3 +73,6 @@ I choose interaction to drive my individual code. We animated the position of se
 ![P1](readmeImages/p1.png)
 
 
+
+
+[def]: readmeImages
